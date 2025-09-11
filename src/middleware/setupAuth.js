@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 
 DotenvFlow.config();
 
+// to handle protected routes
 const jwtAuth = (req, res, next) => {
     const authHeader = req.headers["authorization"];
 
@@ -21,12 +22,26 @@ const jwtAuth = (req, res, next) => {
     }
 };
 
+// to handle the public url
+
+const handlePublicUrlAuth = (req,res,next)=>{
+    req.data = {
+
+        "credit":2
+    }
+    next();
+}
+
 const setupAuth = (app, routes) => {
     routes.forEach((r) => {
         if (r.auth) {
             app.use(r.url, jwtAuth, (req, res, next) => {
                 next();
             });
+        }else{
+            app.use(r.url, handlePublicUrlAuth, (req, res, next) => {
+                next();
+            })
         }
     });
 };

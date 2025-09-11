@@ -1,4 +1,16 @@
 const ROUTE = [
+    // {
+    //     url: "/api/auth/login",
+    //     creditCheck: false,
+    //     auth: false,
+    //     proxy: {
+    //         target: "https://takeuforward.org/",
+    //         changeOrigin: true,
+    //         pathRewrite: {
+    //             ['^/api/auth/login']: ''
+    //         }
+    //     }
+    // },
     {
         url:"/hobby",
         creditCheck:true,

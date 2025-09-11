@@ -24,7 +24,7 @@ app.use(apiRateLimit)
 logger(app);
 
 //  validate request from the client
-setupAuth(app,ROUTE);
+setupAuth(app, ROUTE);
 
 // check credits
 
