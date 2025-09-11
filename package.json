@@ -1,0 +1,30 @@
+{
+  "name": "api_gateway",
+  "version": "1.0.0",
+  "description": "Api gateway for microservice",
+  "keywords": [
+    "gateway"
+  ],
+  "license": "MIT",
+  "author": "Gaurav Kesh Roushan",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon node entry.js",
+    "start": "node entry.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "dotenv-flow": "^4.1.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "express-session": "^1.18.2",
+    "http-proxy-middleware": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "keycloak-connect": "^26.1.1",
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.10",
+    "winston": "^3.17.0"
+  }
+}
