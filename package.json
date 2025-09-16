@@ -25,6 +25,7 @@
     "keycloak-connect": "^26.1.1",
     "morgan": "^1.10.1",
     "nodemon": "^3.1.10",
+    "pm2": "^6.0.11",
     "winston": "^3.17.0"
   }
 }

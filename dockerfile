@@ -1,20 +1,31 @@
-# Use Node.js LTS
 FROM node:20-alpine
 
-# Set working directory inside container
+# Set working directory
 WORKDIR /app
 
-# Copy package files first (better caching for dependencies)
+# Copy package files first
 COPY package*.json ./
+
 
 # Install dependencies
 RUN npm install --production
 
-# Copy all source code
+
+RUN npm install pm2 -g
+
+
+# Copy app source
 COPY . .
 
-# Expose the app port
+# Expose app port
 EXPOSE 9090
 
-# Start app
-CMD ["node", "entry.js"]
+# Set PM2 keys 
+ENV PM2_PUBLIC_KEY=e64lqfkc7sesm1i
+ENV PM2_SECRET_KEY=v9hrgx9ftm7vqs6
+
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
