@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ..   # go up one level (root of project)
+      dockerfile: Dockerfile
+    container_name: node-backend
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../:/app          # mount project code
+      - /app/node_modules # prevent overwriting node_modules
+    command: npm run dev  # use nodemon for dev (add in package.json scripts)
+    environment:
+      - NODE_ENV=development
+      - JWT_SECRET =dsfl;msdf42354654645645$5435$5345345sdf56ds76t4bhfds54v68979erw7t356d4g5fd4g65t5k,jhmgnbvcrgt68r5fn4654rdh65r6tyu766vb6df4g+64dfvc3b1d654fre4etry@
+
+

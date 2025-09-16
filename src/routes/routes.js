@@ -16,7 +16,7 @@ const ROUTE = [
         creditCheck:true,
         auth:false,
         proxy:{
-            target:"https://takeuforward.org/",
+            target:"https://e-patrol.onrender.com/",
             changeOrigin:true,
             pathRewrite:{
                 ['^/hobby']:''
